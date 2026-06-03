@@ -3,6 +3,8 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/space-grotesk";
 
+@plugin "@tailwindcss/typography";
+
 @source "../lib/**/*.{ts,tsx}";
 @source "../routes/**/*.{ts,tsx}";
 
