@@ -1,3 +1,6 @@
+// src/routes/__root.tsx
+// <reference types="vite/client" />
+
 import {
   createRootRoute,
   HeadContent,
@@ -5,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import stylesCss from "../styles.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -20,6 +24,7 @@ export const Route = createRootRoute({
         title: "TanStack Start Starter",
       },
     ],
+    links: [{ rel: "stylesheet", href: stylesCss }],
   }),
   component: RootComponent,
 });

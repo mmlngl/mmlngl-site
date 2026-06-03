@@ -25,6 +25,16 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
+    "noPropertyAccessFromIndexSignature": false,
+    "baseUrl": ".",
+    "paths": {
+      "~lib/*": ["./src/lib/*"],
+      "~ui/*": ["./src/lib/shared/design-system/components/ui/*"],
+      "~shared/*": ["./src/lib/shared/*"],
+      "~entities/*": ["./src/lib/entities/*"],
+      "~features/*": ["./src/lib/features/*"],
+      "~widgets/*": ["./src/lib/widgets/*"],
+      "~app/*": ["./src/lib/app/*"]
+    }
   }
 }
