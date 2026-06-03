@@ -12,6 +12,17 @@ const blog = defineCollection({
   }),
 });
 
+const skills = defineCollection({
+  name: "skills",
+  directory: "content/skills",
+  include: "**/*.mdx",
+  schema: z.object({
+    name: z.string(),
+    slug: z.string(),
+    content: z.string(),
+  }),
+});
+
 export default defineConfig({
-  content: [blog],
+  content: [blog, skills],
 });

@@ -3,13 +3,13 @@ import { loadAllBlogPostsFn } from "~lib/entities/blog-post/server";
 import * as BlogUI from "~lib/widgets/blog";
 
 export const Route = createFileRoute("/blog/")({
-  component: BlogIndex,
+  component: BlogPost,
   loader: async () => ({
     posts: await loadAllBlogPostsFn(),
   }),
 });
 
-function BlogIndex() {
+function BlogPost() {
   const { posts } = Route.useLoaderData();
   return (
     <div>
