@@ -34,7 +34,8 @@
       "~entities/*": ["./src/lib/entities/*"],
       "~features/*": ["./src/lib/features/*"],
       "~widgets/*": ["./src/lib/widgets/*"],
-      "~app/*": ["./src/lib/app/*"]
+      "~app/*": ["./src/lib/app/*"],
+      "content-collections": ["./.content-collections/generated"]
     }
   }
 }

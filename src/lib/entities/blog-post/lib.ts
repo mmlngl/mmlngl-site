@@ -1,5 +1,3 @@
-export interface BlogPostModel {
-  title: string;
-  slug: string;
-  content: string;
-}
+import type { Blogpost } from "content-collections";
+
+export type BlogPostModel = Blogpost;
