@@ -5,9 +5,5 @@ import { Markdown } from "~ui/markdown";
 export const Content: FC = () => {
   const skill = useSkill();
 
-  return (
-    <div className="prose">
-      <Markdown content={skill.content} />
-    </div>
-  );
+  return <Markdown className="my-6 md:my-8">{skill.content}</Markdown>;
 };

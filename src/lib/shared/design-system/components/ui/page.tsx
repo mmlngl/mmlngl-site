@@ -1,36 +1,48 @@
-import type { ComponentPropsWithoutRef, FC, ReactNode } from "react";
+import type {
+  ComponentPropsWithoutRef,
+  FC,
+  ReactElement,
+  ReactNode,
+} from "react";
 import { cn } from "~shared/design-system/utils";
+import { T } from "./typography";
 
 export interface HeaderProps extends ComponentPropsWithoutRef<"div"> {
   heading: ReactNode;
+  headingRender?: ReactElement;
   lead?: ReactNode;
+  leadRender?: ReactElement;
   actions?: ReactNode[];
 }
 
 export const Header: FC<HeaderProps> = ({
+  actions,
   className,
   heading,
+  headingRender,
   lead,
-  actions,
+  leadRender,
   ...props
-}) => (
-  <div
-    className={cn(
-      "p-6 border-y shadow w-full justify-between items-baseline flex",
-      className,
-    )}
-    {...props}
-  >
-    <div className="flex flex-col gap-4">
-      <h1 className="text-9xl">{heading}</h1>
-      {lead ? <p className="text-2xl">{lead}</p> : null}
-    </div>
+}) => {
+  return (
+    <div
+      className={cn(
+        "p-6 border-y shadow w-full justify-between items-baseline flex",
+        className,
+      )}
+      {...props}
+    >
+      <div className="flex flex-col gap-4">
+        <T.H1 render={headingRender}>{heading}</T.H1>
+        {lead ? <T.Lead render={leadRender}>{lead}</T.Lead> : null}
+      </div>
 
-    {actions && actions.length > 0 && (
-      <div className="flex items-center gap-4">{actions}</div>
-    )}
-  </div>
-);
+      {actions && actions.length > 0 && (
+        <div className="flex items-center gap-4">{actions}</div>
+      )}
+    </div>
+  );
+};
 
 export const Content: FC<ComponentPropsWithoutRef<"div">> = ({
   className,
@@ -38,7 +50,7 @@ export const Content: FC<ComponentPropsWithoutRef<"div">> = ({
   ...props
 }) => {
   return (
-    <div className={cn("p-6", className)} {...props}>
+    <div className={cn("p-6 flex flex-col gap-8", className)} {...props}>
       {children}
     </div>
   );

@@ -1,14 +1,28 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Button } from "~ui/button";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Content, Header } from "~ui/page";
 
 export const Route = createFileRoute("/")({
-  component: RouteComponent,
+  component: HomePage,
 });
 
-function RouteComponent() {
+function HomePage() {
   return (
-    <div>
-      <Button>Click me</Button>
-    </div>
+    <>
+      <Header
+        heading={
+          <>
+            Practical guides
+            <br />
+            for Creatives
+            <br />
+            leveling up with AI
+          </>
+        }
+        lead="– Michele M."
+      />
+      <Content>
+        <Link to="/introduction">Introduction</Link>
+      </Content>
+    </>
   );
 }

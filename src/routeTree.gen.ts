@@ -9,12 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as IntroductionRouteImport } from './routes/introduction'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SkillsIndexRouteImport } from './routes/skills/index'
+import { Route as OutcomesIndexRouteImport } from './routes/outcomes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as SkillsSlugRouteImport } from './routes/skills/$slug'
+import { Route as OutcomesSlugRouteImport } from './routes/outcomes/$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
+const IntroductionRoute = IntroductionRouteImport.update({
+  id: '/introduction',
+  path: '/introduction',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -23,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const SkillsIndexRoute = SkillsIndexRouteImport.update({
   id: '/skills/',
   path: '/skills/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutcomesIndexRoute = OutcomesIndexRouteImport.update({
+  id: '/outcomes/',
+  path: '/outcomes/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -35,6 +48,11 @@ const SkillsSlugRoute = SkillsSlugRouteImport.update({
   path: '/skills/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OutcomesSlugRoute = OutcomesSlugRouteImport.update({
+  id: '/outcomes/$slug',
+  path: '/outcomes/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -43,44 +61,88 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/introduction': typeof IntroductionRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/outcomes/$slug': typeof OutcomesSlugRoute
   '/skills/$slug': typeof SkillsSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/outcomes/': typeof OutcomesIndexRoute
   '/skills/': typeof SkillsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/introduction': typeof IntroductionRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/outcomes/$slug': typeof OutcomesSlugRoute
   '/skills/$slug': typeof SkillsSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/outcomes': typeof OutcomesIndexRoute
   '/skills': typeof SkillsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/introduction': typeof IntroductionRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/outcomes/$slug': typeof OutcomesSlugRoute
   '/skills/$slug': typeof SkillsSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/outcomes/': typeof OutcomesIndexRoute
   '/skills/': typeof SkillsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blog/$slug' | '/skills/$slug' | '/blog/' | '/skills/'
+  fullPaths:
+    | '/'
+    | '/introduction'
+    | '/blog/$slug'
+    | '/outcomes/$slug'
+    | '/skills/$slug'
+    | '/blog/'
+    | '/outcomes/'
+    | '/skills/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blog/$slug' | '/skills/$slug' | '/blog' | '/skills'
-  id: '__root__' | '/' | '/blog/$slug' | '/skills/$slug' | '/blog/' | '/skills/'
+  to:
+    | '/'
+    | '/introduction'
+    | '/blog/$slug'
+    | '/outcomes/$slug'
+    | '/skills/$slug'
+    | '/blog'
+    | '/outcomes'
+    | '/skills'
+  id:
+    | '__root__'
+    | '/'
+    | '/introduction'
+    | '/blog/$slug'
+    | '/outcomes/$slug'
+    | '/skills/$slug'
+    | '/blog/'
+    | '/outcomes/'
+    | '/skills/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  IntroductionRoute: typeof IntroductionRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  OutcomesSlugRoute: typeof OutcomesSlugRoute
   SkillsSlugRoute: typeof SkillsSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  OutcomesIndexRoute: typeof OutcomesIndexRoute
   SkillsIndexRoute: typeof SkillsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/introduction': {
+      id: '/introduction'
+      path: '/introduction'
+      fullPath: '/introduction'
+      preLoaderRoute: typeof IntroductionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -93,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/skills'
       fullPath: '/skills/'
       preLoaderRoute: typeof SkillsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outcomes/': {
+      id: '/outcomes/'
+      path: '/outcomes'
+      fullPath: '/outcomes/'
+      preLoaderRoute: typeof OutcomesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -109,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SkillsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/outcomes/$slug': {
+      id: '/outcomes/$slug'
+      path: '/outcomes/$slug'
+      fullPath: '/outcomes/$slug'
+      preLoaderRoute: typeof OutcomesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -121,9 +197,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  IntroductionRoute: IntroductionRoute,
   BlogSlugRoute: BlogSlugRoute,
+  OutcomesSlugRoute: OutcomesSlugRoute,
   SkillsSlugRoute: SkillsSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  OutcomesIndexRoute: OutcomesIndexRoute,
   SkillsIndexRoute: SkillsIndexRoute,
 }
 export const routeTree = rootRouteImport

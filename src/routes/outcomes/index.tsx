@@ -1,21 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { loadAllSkillsFn } from "~lib/entities/skill/server";
-import * as SkillsUI from "~lib/widgets/skills";
+import { loadAllOutcomesFn } from "~lib/entities/outcome/server";
+import * as OutcomesUI from "~lib/widgets/outcomes";
 import { Content, Header } from "~ui/page";
 import { T } from "~ui/typography";
 
-export const Route = createFileRoute("/skills/")({
-  component: SkillsIndex,
+export const Route = createFileRoute("/outcomes/")({
+  component: OutcomesIndex,
   loader: async () => ({
-    skills: await loadAllSkillsFn(),
+    outcomes: await loadAllOutcomesFn(),
   }),
 });
 
-function SkillsIndex() {
-  const { skills } = Route.useLoaderData();
+function OutcomesIndex() {
+  const { outcomes } = Route.useLoaderData();
   return (
     <>
-      <Header heading="Skills" lead="AI Skills for Claude etc." />
+      <Header heading="Outcomes" />
       <Content>
         <T.Lead className="max-w-full md:max-w-[40ch]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -23,7 +23,9 @@ function SkillsIndex() {
           since 1966, when designers at Letraset and James Mosley,
         </T.Lead>
 
-        <SkillsUI.CardList skills={skills} />
+        <hr />
+
+        <OutcomesUI.CardList outcomes={outcomes} />
       </Content>
     </>
   );

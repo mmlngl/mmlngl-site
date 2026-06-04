@@ -23,6 +23,29 @@ const skills = defineCollection({
   }),
 });
 
+const outcomes = defineCollection({
+  name: "outcomes",
+  directory: "content/outcomes",
+  include: "**/*.mdx",
+  schema: z.object({
+    name: z.string(),
+    slug: z.string(),
+    skillRefs: z.array(z.string()),
+    content: z.string(),
+  }),
+  transform: async (document, context) => {
+    const skillDocs = document.skillRefs.map((skillSlug) => {
+      const skill = context.documents(skills).find((s) => s.slug === skillSlug);
+      return skill;
+    });
+
+    return {
+      ...document,
+      skills: skillDocs,
+    };
+  },
+});
+
 export default defineConfig({
-  content: [blog, skills],
+  content: [blog, skills, outcomes],
 });

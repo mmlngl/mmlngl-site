@@ -7,7 +7,8 @@ export const Masthead: FC = () => {
     <div className="border-b py-4 px-4 z-10 flex items-center justify-between">
       <nav className="flex gap-4">
         <Link to="/">Home</Link>
-        <Link to="/skills">Skills</Link>
+        <Link to="/outcomes">UX Outcomes</Link>
+        <Link to="/skills">AI Skills</Link>
         <Link to="/blog">Blog</Link>
       </nav>
       <div>
