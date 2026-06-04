@@ -9,9 +9,15 @@ export interface CardProps {
 export const Card: FC<CardProps> = ({ outcome }) => {
   return (
     <Entity.OutcomeEntity outcome={outcome}>
-      <UICard>
+      <UICard className="group">
         <CardHeader>
-          <CardTitle>{outcome.name}</CardTitle>
+          <CardTitle className="inline">
+            <span className="text-muted-foreground/50 group-hover:text-foreground transition-colors">
+              How to
+            </span>
+            {` `}
+            {outcome.name}
+          </CardTitle>
         </CardHeader>
       </UICard>
     </Entity.OutcomeEntity>

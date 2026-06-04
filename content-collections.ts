@@ -1,9 +1,9 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { z } from "zod";
 
-const blog = defineCollection({
-  name: "blogposts",
-  directory: "content/blog",
+const guides = defineCollection({
+  name: "guides",
+  directory: "content/guides",
   include: "**/*.mdx",
   schema: z.object({
     title: z.string(),
@@ -47,5 +47,5 @@ const outcomes = defineCollection({
 });
 
 export default defineConfig({
-  content: [blog, skills, outcomes],
+  content: [guides, skills, outcomes],
 });

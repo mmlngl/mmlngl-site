@@ -9,9 +9,15 @@ export interface CardProps {
 export const Card: FC<CardProps> = ({ skill }) => {
   return (
     <Entity.SkillEntity skill={skill}>
-      <UICard>
+      <UICard className="group">
         <CardHeader>
-          <CardTitle>{skill.name}</CardTitle>
+          <CardTitle>
+            <span className="text-muted-foreground/50 group-hover:text-foreground transition-colors">
+              /skill:
+            </span>
+            {` `}
+            {skill.name}
+          </CardTitle>
         </CardHeader>
       </UICard>
     </Entity.SkillEntity>

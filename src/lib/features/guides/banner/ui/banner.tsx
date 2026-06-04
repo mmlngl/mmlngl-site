@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import { useBlogPost } from "~lib/entities/blog-post";
+import { useGuide } from "~lib/entities/guide-post";
 import { Header } from "~ui/page";
 
 export const Banner: FC = () => {
-  const post = useBlogPost();
+  const post = useGuide();
   return <Header heading={post.title} />;
 };

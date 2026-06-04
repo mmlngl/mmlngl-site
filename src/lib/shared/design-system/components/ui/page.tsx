@@ -34,7 +34,11 @@ export const Header: FC<HeaderProps> = ({
     >
       <div className="flex flex-col gap-4">
         <T.H1 render={headingRender}>{heading}</T.H1>
-        {lead ? <T.Lead render={leadRender}>{lead}</T.Lead> : null}
+        {lead ? (
+          <T.Lead className="max-w-full md:max-w-[40ch]" render={leadRender}>
+            {lead}
+          </T.Lead>
+        ) : null}
       </div>
 
       {actions && actions.length > 0 && (

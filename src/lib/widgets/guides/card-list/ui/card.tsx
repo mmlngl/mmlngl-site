@@ -1,19 +1,19 @@
 import type { FC } from "react";
-import * as Entity from "~entities/blog-post";
+import * as Entity from "~entities/guide-post";
 import { CardHeader, CardTitle, Card as UICard } from "~ui/card";
 
 export interface CardProps {
-  post: Entity.BlogPostModel;
+  post: Entity.GuideModel;
 }
 
 export const Card: FC<CardProps> = ({ post }) => {
   return (
-    <Entity.BlogPostEntity post={post}>
+    <Entity.GuideEntity post={post}>
       <UICard>
         <CardHeader>
           <CardTitle>{post.title}</CardTitle>
         </CardHeader>
       </UICard>
-    </Entity.BlogPostEntity>
+    </Entity.GuideEntity>
   );
 };

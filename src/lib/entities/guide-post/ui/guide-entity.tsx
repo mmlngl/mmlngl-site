@@ -1,8 +1,8 @@
 import type { FC, PropsWithChildren } from "react";
-import type { BlogPostModel } from "../lib";
-import { Context } from "./blog-post-context";
+import type { GuideModel } from "../lib";
+import { Context } from "./guide-context";
 
-export const BlogPostEntity: FC<PropsWithChildren<{ post: BlogPostModel }>> = ({
+export const GuideEntity: FC<PropsWithChildren<{ post: GuideModel }>> = ({
   children,
   post,
 }) => {
