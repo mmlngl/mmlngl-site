@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import * as WayfindingUI from "~lib/widgets/wayfinding";
 import stylesCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -44,7 +45,9 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
+        <WayfindingUI.Masthead />
         {children}
+        <WayfindingUI.Footer />
         <Scripts />
       </body>
     </html>
