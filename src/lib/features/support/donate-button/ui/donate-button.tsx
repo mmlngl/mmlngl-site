@@ -6,7 +6,7 @@ export const buttonVariants = cva("", {
   variants: {
     variant: {
       button: "inline-block",
-      link: "",
+      link: "inline",
     },
     size: {
       default: "w-28 md:w-42",
@@ -48,7 +48,7 @@ export const DonateButton: FC<DonateButtonProps> = ({
           "sr-only": variant === "button",
         })}
       >
-        Buy Me Coffee Page
+        Buy Me Coffee
       </span>
       {variant === "button" ? (
         <img

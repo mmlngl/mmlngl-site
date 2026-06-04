@@ -29,20 +29,17 @@ export const Header: FC<HeaderProps> = ({
   return (
     <div
       className={cn(
-        "p-6 border-y shadow w-full justify-between items-baseline flex",
+        "p-8 md:p-20 border-y shadow w-full justify-between items-baseline flex",
         className,
       )}
       {...props}
     >
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-6 md:gap-12">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <div className="flex items-center gap-4 text-sm">
             <span className="text-muted-foreground/30">/</span>
-            {breadcrumbs.map((crumb) => (
-              <>
-                {crumb}
-                <span className="text-muted-foreground/30">/</span>
-              </>
+            {breadcrumbs.map((crumb, i) => (
+              <span key={String(i)}>{crumb}</span>
             ))}
           </div>
         )}
@@ -67,7 +64,10 @@ export const Content: FC<ComponentPropsWithoutRef<"div">> = ({
   ...props
 }) => {
   return (
-    <div className={cn("p-6 flex flex-col gap-8", className)} {...props}>
+    <div
+      className={cn("p-8 md:px-20 pb-20 flex flex-col gap-8", className)}
+      {...props}
+    >
       {children}
     </div>
   );

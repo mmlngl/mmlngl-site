@@ -17,15 +17,25 @@ function OutcomesIndex() {
     <>
       <Header heading="Outcomes" />
       <Content>
-        <T.Lead className="max-w-full md:max-w-[40ch]">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since 1966, when designers at Letraset and James Mosley,
-        </T.Lead>
+        <div className="prose">
+          <T.Lead>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley.
+          </T.Lead>
 
-        <hr />
+          <hr />
 
-        <OutcomesUI.CardList outcomes={outcomes} />
+          <OutcomesUI.CardList outcomes={outcomes} />
+
+          <hr />
+
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley.
+          </p>
+        </div>
       </Content>
     </>
   );

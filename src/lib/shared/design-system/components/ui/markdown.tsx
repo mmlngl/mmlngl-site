@@ -2,7 +2,7 @@
 import type { ComponentType, FC, HTMLAttributes } from "react";
 import { SafeMdxRenderer } from "safe-mdx";
 import { mdxParse } from "safe-mdx/parse";
-import { cn } from "~shared/design-system/utils";
+import { Prose } from "./prose";
 import { T } from "./typography";
 
 export type MarkdownProps = HTMLAttributes<"div"> & {
@@ -12,13 +12,12 @@ export type MarkdownProps = HTMLAttributes<"div"> & {
 
 export const Markdown: FC<MarkdownProps> = ({
   children,
-  className,
   extraComponents = {},
-  ...props
+  ...p
 }) => {
   const ast = mdxParse(children);
   return (
-    <div className={cn("prose", className)} {...props}>
+    <Prose {...p}>
       <SafeMdxRenderer
         markdown={children}
         mdast={ast}
@@ -29,6 +28,6 @@ export const Markdown: FC<MarkdownProps> = ({
           ...extraComponents,
         }}
       />
-    </div>
+    </Prose>
   );
 };

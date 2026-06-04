@@ -1,17 +1,17 @@
-import { Link } from "@tanstack/react-router";
 import type { FC } from "react";
 import { DonateButton } from "~lib/features/support";
+import { NavLink } from "./nav-link";
 
 export const Masthead: FC = () => {
   return (
-    <div className="border-b py-4 px-4 z-10 flex items-center justify-between">
+    <div className="shadow py-4 px-8 z-10 flex items-center justify-between">
       <nav className="flex gap-6">
-        <Link to="/">Home</Link>
-        <Link to="/outcomes">UX Outcomes</Link>
-        <Link to="/skills">AI Skills</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/outcomes">UX Outcomes</NavLink>
+        <NavLink to="/skills">AI Skills</NavLink>
       </nav>
       <div className="flex gap-6 items-center">
-        <Link to="/guides">Guides</Link>
+        <NavLink to="/guides">Guides</NavLink>
         <DonateButton />
       </div>
     </div>
