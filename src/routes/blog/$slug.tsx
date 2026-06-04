@@ -2,6 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { BlogPostEntity } from "~lib/entities/blog-post";
 import { loadBlogPostForSlugFn } from "~lib/entities/blog-post/server";
 import * as Blog from "~lib/features/blog";
+import { Content } from "~ui/page";
 
 export const Route = createFileRoute("/blog/$slug")({
   component: BlogIndex,
@@ -17,7 +18,9 @@ function BlogIndex() {
   return (
     <BlogPostEntity post={post}>
       <Blog.Banner />
-      <Blog.Content />
+      <Content>
+        <Blog.Content />
+      </Content>
     </BlogPostEntity>
   );
 }

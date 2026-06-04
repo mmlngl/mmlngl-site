@@ -9,7 +9,7 @@ export interface CardListProps {
 
 export const CardList: FC<CardListProps> = ({ skills }) => {
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {skills.map((skill) => (
         <Link to="/skills/$slug" params={{ slug: skill.slug }} key={skill.slug}>
           <Card skill={skill} />

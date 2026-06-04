@@ -2,6 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { SkillEntity } from "~lib/entities/skill";
 import { loadSkillForSlugFn } from "~lib/entities/skill/server";
 import * as Skill from "~lib/features/skills";
+import { Content } from "~ui/page";
 
 export const Route = createFileRoute("/skills/$slug")({
   component: SkillDetail,
@@ -17,7 +18,9 @@ function SkillDetail() {
   return (
     <SkillEntity skill={skill}>
       <Skill.Banner />
-      <Skill.Content />
+      <Content>
+        <Skill.Content />
+      </Content>
     </SkillEntity>
   );
 }

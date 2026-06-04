@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { loadAllSkillsFn } from "~lib/entities/skill/server";
 import * as SkillsUI from "~lib/widgets/skills";
+import { Content, Header } from "~ui/page";
 
 export const Route = createFileRoute("/skills/")({
   component: SkillsIndex,
@@ -12,8 +13,11 @@ export const Route = createFileRoute("/skills/")({
 function SkillsIndex() {
   const { skills } = Route.useLoaderData();
   return (
-    <div>
-      <SkillsUI.CardList skills={skills} />
-    </div>
+    <>
+      <Header heading="Skills" lead="Stuff &amp; things here" />
+      <Content>
+        <SkillsUI.CardList skills={skills} />
+      </Content>
+    </>
   );
 }
