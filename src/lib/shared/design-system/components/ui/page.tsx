@@ -13,10 +13,12 @@ export interface HeaderProps extends ComponentPropsWithoutRef<"div"> {
   lead?: ReactNode;
   leadRender?: ReactElement;
   actions?: ReactNode[];
+  breadcrumbs?: ReactNode[];
 }
 
 export const Header: FC<HeaderProps> = ({
   actions,
+  breadcrumbs,
   className,
   heading,
   headingRender,
@@ -33,6 +35,17 @@ export const Header: FC<HeaderProps> = ({
       {...props}
     >
       <div className="flex flex-col gap-4">
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <div className="flex items-center gap-4 text-sm">
+            <span className="text-muted-foreground/30">/</span>
+            {breadcrumbs.map((crumb) => (
+              <>
+                {crumb}
+                <span className="text-muted-foreground/30">/</span>
+              </>
+            ))}
+          </div>
+        )}
         <T.H1 render={headingRender}>{heading}</T.H1>
         {lead ? (
           <T.Lead className="max-w-full md:max-w-[40ch]" render={leadRender}>

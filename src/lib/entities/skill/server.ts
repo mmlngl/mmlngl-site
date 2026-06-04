@@ -3,7 +3,7 @@ import { allSkills } from "content-collections";
 import type { SkillModel } from "./lib";
 
 export const loadAllSkills = async (): Promise<SkillModel[]> => {
-  return allSkills.map((skill) => skill);
+  return allSkills.toSorted((a, b) => a.order - b.order);
 };
 
 export const loadAllSkillsFn = createServerFn().handler(loadAllSkills);

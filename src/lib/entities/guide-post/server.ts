@@ -3,14 +3,14 @@ import { allGuides } from "content-collections";
 import type { GuideModel } from "./lib";
 
 export const loadAllGuides = async (): Promise<GuideModel[]> => {
-  return allGuides.map((post) => post);
+  return allGuides.toSorted((a, b) => a.order - b.order);
 };
 
 export const loadAllGuidesFn = createServerFn().handler(loadAllGuides);
 
 export const loadGuideForSlug = async (slug: GuideModel["slug"]) => {
-  const posts = await loadAllGuides();
-  return posts.find((post) => post.slug === slug);
+  const guides = await loadAllGuides();
+  return guides.find((guide) => guide.slug === slug);
 };
 
 export const loadGuideForSlugFn = createServerFn()

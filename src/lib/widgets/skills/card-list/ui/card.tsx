@@ -11,12 +11,12 @@ export const Card: FC<CardProps> = ({ skill }) => {
     <Entity.SkillEntity skill={skill}>
       <UICard className="group">
         <CardHeader>
-          <CardTitle>
+          <CardTitle className="text-lg">
             <span className="text-muted-foreground/50 group-hover:text-foreground transition-colors">
-              /skill:
+              Skill:
             </span>
             {` `}
-            {skill.name}
+            <span className="font-mono">{`/${skill.name}`}</span>
           </CardTitle>
         </CardHeader>
       </UICard>

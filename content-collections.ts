@@ -7,6 +7,7 @@ const guides = defineCollection({
   include: "**/*.mdx",
   schema: z.object({
     title: z.string(),
+    order: z.number().default(0),
     slug: z.string(),
     content: z.string(),
   }),
@@ -18,6 +19,7 @@ const skills = defineCollection({
   include: "**/*.mdx",
   schema: z.object({
     name: z.string(),
+    order: z.number().default(0),
     slug: z.string(),
     content: z.string(),
   }),

@@ -9,10 +9,10 @@ export interface CardProps {
 export const Card: FC<CardProps> = ({ outcome }) => {
   return (
     <Entity.OutcomeEntity outcome={outcome}>
-      <UICard className="group">
+      <UICard className="group hover:bg-primary hover:border-primary transition-colors">
         <CardHeader>
-          <CardTitle className="inline">
-            <span className="text-muted-foreground/50 group-hover:text-foreground transition-colors">
+          <CardTitle className="text-lg group-hover:text-primary-foreground">
+            <span className="text-muted-foreground/50 group-hover:text-primary-foreground">
               How to
             </span>
             {` `}
