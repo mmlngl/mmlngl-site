@@ -6,6 +6,7 @@ import { CardListItem } from "./card-list-item";
 
 export interface CardListProps extends HTMLAttributes<HTMLDivElement> {
   heading?: ReactNode;
+  footer?: ReactNode;
   headingRender?: ReactElement;
   posts: Entity.PostModel[];
   filterWith?: Entity.PostModel["slug"][];
@@ -14,6 +15,7 @@ export interface CardListProps extends HTMLAttributes<HTMLDivElement> {
 export const CardList: FC<CardListProps> = ({
   posts,
   heading,
+  footer,
   headingRender,
   filterWith = [],
   className,
@@ -36,6 +38,7 @@ export const CardList: FC<CardListProps> = ({
           <CardListItem key={post.slug} post={post} />
         ))}
       </div>
+      {footer ? <div className="mt-4">{footer}</div> : null}
     </section>
   );
 };

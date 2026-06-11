@@ -8,7 +8,8 @@ export const Footer: FC = () => {
     <footer className="text-xs border-t">
       <Content>
         <Copyright />
-        <Link to="/posts">AI Posts</Link>
+        <Link to="/posts">Posts</Link>
+        <Link to="/connect">Connect</Link>
       </Content>
     </footer>
   );

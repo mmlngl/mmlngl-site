@@ -9,16 +9,10 @@ function HomePage() {
   return (
     <>
       <Header
-        heading={
-          <>
-            Practical guides
-            <br />
-            for Creatives
-            <br />
-            leveling up with AI
-          </>
-        }
-        lead="– Michele M."
+        heading={<>Same ideas. Different perspectives.</>}
+        headingRender={<h1 className="text-7xl! md:text-9xl!" />}
+        lead="Thoughts on Product, Software, AI, Design, and Entrepreneurship.
+        Collected while building things."
       />
       <Content>Here</Content>
     </>

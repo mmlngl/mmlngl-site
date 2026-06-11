@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UiRouteImport } from './routes/ui'
+import { Route as ConnectRouteImport } from './routes/connect'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PostsIndexRouteImport } from './routes/posts/index'
 import { Route as PostsSlugRouteImport } from './routes/posts/$slug'
@@ -17,6 +18,11 @@ import { Route as PostsSlugRouteImport } from './routes/posts/$slug'
 const UiRoute = UiRouteImport.update({
   id: '/ui',
   path: '/ui',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnectRoute = ConnectRouteImport.update({
+  id: '/connect',
+  path: '/connect',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,12 +43,14 @@ const PostsSlugRoute = PostsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/connect': typeof ConnectRoute
   '/ui': typeof UiRoute
   '/posts/$slug': typeof PostsSlugRoute
   '/posts/': typeof PostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/connect': typeof ConnectRoute
   '/ui': typeof UiRoute
   '/posts/$slug': typeof PostsSlugRoute
   '/posts': typeof PostsIndexRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/connect': typeof ConnectRoute
   '/ui': typeof UiRoute
   '/posts/$slug': typeof PostsSlugRoute
   '/posts/': typeof PostsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ui' | '/posts/$slug' | '/posts/'
+  fullPaths: '/' | '/connect' | '/ui' | '/posts/$slug' | '/posts/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ui' | '/posts/$slug' | '/posts'
-  id: '__root__' | '/' | '/ui' | '/posts/$slug' | '/posts/'
+  to: '/' | '/connect' | '/ui' | '/posts/$slug' | '/posts'
+  id: '__root__' | '/' | '/connect' | '/ui' | '/posts/$slug' | '/posts/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConnectRoute: typeof ConnectRoute
   UiRoute: typeof UiRoute
   PostsSlugRoute: typeof PostsSlugRoute
   PostsIndexRoute: typeof PostsIndexRoute
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/ui'
       fullPath: '/ui'
       preLoaderRoute: typeof UiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connect': {
+      id: '/connect'
+      path: '/connect'
+      fullPath: '/connect'
+      preLoaderRoute: typeof ConnectRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConnectRoute: ConnectRoute,
   UiRoute: UiRoute,
   PostsSlugRoute: PostsSlugRoute,
   PostsIndexRoute: PostsIndexRoute,

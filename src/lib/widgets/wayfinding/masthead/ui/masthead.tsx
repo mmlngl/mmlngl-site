@@ -8,7 +8,9 @@ export const Masthead: FC = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/posts">Posts</NavLink>
       </nav>
-      <div className="flex gap-6 items-center">yo</div>
+      <div className="flex gap-6 items-center">
+        <NavLink to="/connect">Connect</NavLink>
+      </div>
     </div>
   );
 };

@@ -25,7 +25,24 @@ function PostsIndex() {
 
         {/*<hr />*/}
 
-        <PostsUI.CardList posts={posts} heading="AI" />
+        <PostsUI.CardList
+          posts={posts}
+          heading="AI"
+          headingRender={<h1 className="font-sans font-bold text-xl" />}
+          footer={<p>Stuff and things here</p>}
+        />
+
+        <PostsUI.CardList
+          posts={posts}
+          heading="AI"
+          headingRender={<h1 className="font-sans font-bold text-xl" />}
+        />
+
+        <PostsUI.CardList
+          posts={posts}
+          heading="AI"
+          headingRender={<h1 className="font-sans font-bold text-xl" />}
+        />
 
         {/*<hr />*/}
 
