@@ -39,7 +39,10 @@ export const Header: FC<HeaderProps> = ({
           <div className="flex items-center gap-4 text-sm">
             <span className="text-muted-foreground/30">/</span>
             {breadcrumbs.map((crumb, i) => (
-              <span key={String(i)}>{crumb}</span>
+              <>
+                <span key={String(i)}>{crumb}</span>
+                <span className="text-muted-foreground/30">/</span>
+              </>
             ))}
           </div>
         )}

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/AI/Big AI is selling horsepower to commuters.md",
+                "file": "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Big AI is selling horsepower to commuters"
+              "title": "Utility gets adoption. Remarkability gets distribution."
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 425.5
   },
   "right": {
     "id": "bbf909bb90adca78",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/AI/Big AI is selling horsepower to commuters.md",
+                "file": "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Big AI is selling horsepower to commuters"
+              "title": "Backlinks for Utility gets adoption. Remarkability gets distribution."
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/AI/Big AI is selling horsepower to commuters.md",
+                "file": "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Big AI is selling horsepower to commuters"
+              "title": "Outgoing links from Utility gets adoption. Remarkability gets distribution."
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/AI/Big AI is selling horsepower to commuters.md",
+                "file": "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Big AI is selling horsepower to commuters"
+              "title": "Outline of Utility gets adoption. Remarkability gets distribution."
             }
           }
         ]
@@ -183,13 +183,19 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "cf536fa20717fb2e",
+  "active": "5b6f382ad0ebc038",
   "lastOpenFiles": [
-    "Content Calendar/2026-06-12 Big AI is selling horse power.md",
+    "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution.",
+    "Posts/AI/Big AI sells F1 cars for trips to Tesco/Big AI sells F1 cars for trips to Tesco.md",
+    "Posts/AI/Big AI sells F1 cars for trips to Tesco/Big AI is selling horsepower to commuters.md",
+    "Posts/AI/Big AI sells F1 cars for trips to Tesco",
     "Posts/AI/Big AI is selling horsepower to commuters.md",
+    "Posts/AI/Big AI is selling horsepower to commuters/Big AI is selling horsepower to commuters.md",
+    "Posts/AI/Big AI is selling horsepower to commuters",
+    "Content Calendar/2026-06-12 Big AI is selling horse power.md",
     "Posts/AI/Diverging Interests.md",
     "Content Calendar/2026-06-10 Set Up.md",
-    "Posts/Product & Entrepreneurship/Dear founders,.md",
+    "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
     "Purpose.md",
     "Content Calendar/Content Planning.canvas",
     "Posts/Product & Entrepreneurship/Hiring Team.md",

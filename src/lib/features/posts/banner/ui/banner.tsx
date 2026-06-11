@@ -14,7 +14,7 @@ export const Banner: FC = () => {
         </>
       }
       breadcrumbs={[
-        <Link to="/posts" key="posts">
+        <Link to="/posts" key="posts" className="hover:underline">
           Posts
         </Link>,
       ]}

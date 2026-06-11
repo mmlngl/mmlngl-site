@@ -3,7 +3,10 @@ import { allPosts } from "content-collections";
 import type { PostModel } from "./lib";
 
 export const loadAllPosts = async (): Promise<PostModel[]> => {
-  return allPosts.toSorted((a, b) => a.order - b.order);
+  return allPosts.toSorted(
+    (a, b) =>
+      new Date(b.publishedOn).getTime() - new Date(a.publishedOn).getTime(),
+  );
 };
 
 export const loadAllPostsFn = createServerFn().handler(loadAllPosts);

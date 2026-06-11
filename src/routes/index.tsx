@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Content, Header } from "~ui/page";
 
 export const Route = createFileRoute("/")({

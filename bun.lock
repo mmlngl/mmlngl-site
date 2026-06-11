@@ -8,7 +8,7 @@
         "@effect/platform-bun": ">=4.0.0-beta.78 || >=4.0.0",
         "@effect/platform-node": ">=4.0.0-beta.78 || >=4.0.0",
         "@fontsource-variable/space-grotesk": "^5.2.10",
-        "@fontsource/jacquard-12": "^5.2.8",
+        "@fontsource/story-script": "^5.2.2",
         "@tabler/icons-react": "^3.44.0",
         "@tailwindcss/vite": "^4.3.0",
         "@tanstack/react-router": "^1.170.11",
@@ -298,7 +298,7 @@
 
     "@fontsource-variable/space-grotesk": ["@fontsource-variable/space-grotesk@5.2.10", "", {}, "sha512-yJQO/o35/hAP3CFnpdFTwQku2yzJOae2HIpBmqkOVoxhhXJaQP3g+b6Jrz7u+eI7A5ZdCIf88uMWpBJdFiGr5w=="],
 
-    "@fontsource/jacquard-12": ["@fontsource/jacquard-12@5.2.8", "", {}, "sha512-Mbs9CR1UMst2lCpK2uFx86nvJtrgCjCxsQZy8Qmtf8ppL2StqbXA9Lr04iVj734o58m6+ftoeHENhU2uAJmt/g=="],
+    "@fontsource/story-script": ["@fontsource/story-script@5.2.2", "", {}, "sha512-ZCvSTB+nifwsmoczb0b+DOLDAr5Hqe0EUpbX4qFY/GiCax6qJSyZmgmId8AQys07XgXwIE17Q6dp7+uGqA+E3A=="],
 
     "@hono/node-server": ["@hono/node-server@1.19.14", "", { "peerDependencies": { "hono": "^4" } }, "sha512-GwtvgtXxnWsucXvbQXkRgqksiH2Qed37H9xHZocE5sA3N8O8O8/8FA3uclQXxXVzc9XBZuEOMK7+r02FmSpHtw=="],
 

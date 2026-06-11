@@ -45,7 +45,7 @@ export const H2: FC<H1Props> = ({ render, ...otherProps }) => {
     defaultTagName: "h2",
     render,
     props: mergeProps<"h2">(
-      { className: "text-6xl text-pretty font-cursive" },
+      { className: "text-4xl text-pretty font-cursive" },
       otherProps,
     ),
   });

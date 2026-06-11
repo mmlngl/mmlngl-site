@@ -1,4 +1,4 @@
-# Evaluate Lens Examples
+# Find Lens Examples
 
 ## Example 1
 
