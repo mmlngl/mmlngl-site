@@ -9,18 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IntroductionRouteImport } from './routes/introduction'
+import { Route as UiRouteImport } from './routes/ui'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SkillsIndexRouteImport } from './routes/skills/index'
-import { Route as OutcomesIndexRouteImport } from './routes/outcomes/index'
-import { Route as GuidesIndexRouteImport } from './routes/guides/index'
-import { Route as SkillsSlugRouteImport } from './routes/skills/$slug'
-import { Route as OutcomesSlugRouteImport } from './routes/outcomes/$slug'
-import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
+import { Route as PostsIndexRouteImport } from './routes/posts/index'
+import { Route as PostsSlugRouteImport } from './routes/posts/$slug'
 
-const IntroductionRoute = IntroductionRouteImport.update({
-  id: '/introduction',
-  path: '/introduction',
+const UiRoute = UiRouteImport.update({
+  id: '/ui',
+  path: '/ui',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -28,119 +24,58 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SkillsIndexRoute = SkillsIndexRouteImport.update({
-  id: '/skills/',
-  path: '/skills/',
+const PostsIndexRoute = PostsIndexRouteImport.update({
+  id: '/posts/',
+  path: '/posts/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OutcomesIndexRoute = OutcomesIndexRouteImport.update({
-  id: '/outcomes/',
-  path: '/outcomes/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GuidesIndexRoute = GuidesIndexRouteImport.update({
-  id: '/guides/',
-  path: '/guides/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SkillsSlugRoute = SkillsSlugRouteImport.update({
-  id: '/skills/$slug',
-  path: '/skills/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OutcomesSlugRoute = OutcomesSlugRouteImport.update({
-  id: '/outcomes/$slug',
-  path: '/outcomes/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GuidesSlugRoute = GuidesSlugRouteImport.update({
-  id: '/guides/$slug',
-  path: '/guides/$slug',
+const PostsSlugRoute = PostsSlugRouteImport.update({
+  id: '/posts/$slug',
+  path: '/posts/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/introduction': typeof IntroductionRoute
-  '/guides/$slug': typeof GuidesSlugRoute
-  '/outcomes/$slug': typeof OutcomesSlugRoute
-  '/skills/$slug': typeof SkillsSlugRoute
-  '/guides/': typeof GuidesIndexRoute
-  '/outcomes/': typeof OutcomesIndexRoute
-  '/skills/': typeof SkillsIndexRoute
+  '/ui': typeof UiRoute
+  '/posts/$slug': typeof PostsSlugRoute
+  '/posts/': typeof PostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/introduction': typeof IntroductionRoute
-  '/guides/$slug': typeof GuidesSlugRoute
-  '/outcomes/$slug': typeof OutcomesSlugRoute
-  '/skills/$slug': typeof SkillsSlugRoute
-  '/guides': typeof GuidesIndexRoute
-  '/outcomes': typeof OutcomesIndexRoute
-  '/skills': typeof SkillsIndexRoute
+  '/ui': typeof UiRoute
+  '/posts/$slug': typeof PostsSlugRoute
+  '/posts': typeof PostsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/introduction': typeof IntroductionRoute
-  '/guides/$slug': typeof GuidesSlugRoute
-  '/outcomes/$slug': typeof OutcomesSlugRoute
-  '/skills/$slug': typeof SkillsSlugRoute
-  '/guides/': typeof GuidesIndexRoute
-  '/outcomes/': typeof OutcomesIndexRoute
-  '/skills/': typeof SkillsIndexRoute
+  '/ui': typeof UiRoute
+  '/posts/$slug': typeof PostsSlugRoute
+  '/posts/': typeof PostsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/introduction'
-    | '/guides/$slug'
-    | '/outcomes/$slug'
-    | '/skills/$slug'
-    | '/guides/'
-    | '/outcomes/'
-    | '/skills/'
+  fullPaths: '/' | '/ui' | '/posts/$slug' | '/posts/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/introduction'
-    | '/guides/$slug'
-    | '/outcomes/$slug'
-    | '/skills/$slug'
-    | '/guides'
-    | '/outcomes'
-    | '/skills'
-  id:
-    | '__root__'
-    | '/'
-    | '/introduction'
-    | '/guides/$slug'
-    | '/outcomes/$slug'
-    | '/skills/$slug'
-    | '/guides/'
-    | '/outcomes/'
-    | '/skills/'
+  to: '/' | '/ui' | '/posts/$slug' | '/posts'
+  id: '__root__' | '/' | '/ui' | '/posts/$slug' | '/posts/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  IntroductionRoute: typeof IntroductionRoute
-  GuidesSlugRoute: typeof GuidesSlugRoute
-  OutcomesSlugRoute: typeof OutcomesSlugRoute
-  SkillsSlugRoute: typeof SkillsSlugRoute
-  GuidesIndexRoute: typeof GuidesIndexRoute
-  OutcomesIndexRoute: typeof OutcomesIndexRoute
-  SkillsIndexRoute: typeof SkillsIndexRoute
+  UiRoute: typeof UiRoute
+  PostsSlugRoute: typeof PostsSlugRoute
+  PostsIndexRoute: typeof PostsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/introduction': {
-      id: '/introduction'
-      path: '/introduction'
-      fullPath: '/introduction'
-      preLoaderRoute: typeof IntroductionRouteImport
+    '/ui': {
+      id: '/ui'
+      path: '/ui'
+      fullPath: '/ui'
+      preLoaderRoute: typeof UiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -150,46 +85,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/skills/': {
-      id: '/skills/'
-      path: '/skills'
-      fullPath: '/skills/'
-      preLoaderRoute: typeof SkillsIndexRouteImport
+    '/posts/': {
+      id: '/posts/'
+      path: '/posts'
+      fullPath: '/posts/'
+      preLoaderRoute: typeof PostsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/outcomes/': {
-      id: '/outcomes/'
-      path: '/outcomes'
-      fullPath: '/outcomes/'
-      preLoaderRoute: typeof OutcomesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guides/': {
-      id: '/guides/'
-      path: '/guides'
-      fullPath: '/guides/'
-      preLoaderRoute: typeof GuidesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/skills/$slug': {
-      id: '/skills/$slug'
-      path: '/skills/$slug'
-      fullPath: '/skills/$slug'
-      preLoaderRoute: typeof SkillsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/outcomes/$slug': {
-      id: '/outcomes/$slug'
-      path: '/outcomes/$slug'
-      fullPath: '/outcomes/$slug'
-      preLoaderRoute: typeof OutcomesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guides/$slug': {
-      id: '/guides/$slug'
-      path: '/guides/$slug'
-      fullPath: '/guides/$slug'
-      preLoaderRoute: typeof GuidesSlugRouteImport
+    '/posts/$slug': {
+      id: '/posts/$slug'
+      path: '/posts/$slug'
+      fullPath: '/posts/$slug'
+      preLoaderRoute: typeof PostsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -197,13 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  IntroductionRoute: IntroductionRoute,
-  GuidesSlugRoute: GuidesSlugRoute,
-  OutcomesSlugRoute: OutcomesSlugRoute,
-  SkillsSlugRoute: SkillsSlugRoute,
-  GuidesIndexRoute: GuidesIndexRoute,
-  OutcomesIndexRoute: OutcomesIndexRoute,
-  SkillsIndexRoute: SkillsIndexRoute,
+  UiRoute: UiRoute,
+  PostsSlugRoute: PostsSlugRoute,
+  PostsIndexRoute: PostsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

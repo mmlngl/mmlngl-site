@@ -29,7 +29,7 @@ export const Header: FC<HeaderProps> = ({
   return (
     <div
       className={cn(
-        "p-8 md:p-20 border-y shadow w-full justify-between items-baseline flex",
+        "p-8 md:p-20 border-b w-full justify-between items-baseline flex",
         className,
       )}
       {...props}
@@ -43,7 +43,9 @@ export const Header: FC<HeaderProps> = ({
             ))}
           </div>
         )}
-        <T.H1 render={headingRender}>{heading}</T.H1>
+        <T.H1 className="max-w-5xl" render={headingRender}>
+          {heading}
+        </T.H1>
         {lead ? (
           <T.Lead className="max-w-full md:max-w-[40ch]" render={leadRender}>
             {lead}
@@ -64,11 +66,8 @@ export const Content: FC<ComponentPropsWithoutRef<"div">> = ({
   ...props
 }) => {
   return (
-    <div
-      className={cn("p-8 md:px-20 pb-20 flex flex-col gap-8", className)}
-      {...props}
-    >
-      {children}
+    <div className={cn("p-8 md:px-20 pb-20", className)} {...props}>
+      <div className="flex flex-col gap-8">{children}</div>
     </div>
   );
 };

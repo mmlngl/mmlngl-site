@@ -20,9 +20,7 @@ function HomePage() {
         }
         lead="– Michele M."
       />
-      <Content>
-        <Link to="/introduction">Introduction</Link>
-      </Content>
+      <Content>Here</Content>
     </>
   );
 }

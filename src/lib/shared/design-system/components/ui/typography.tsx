@@ -2,6 +2,24 @@ import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import type { FC } from "react";
 
+export interface HeadlineProps extends useRender.ComponentProps<"h1"> {}
+
+export const Headline: FC<HeadlineProps> = ({ render, ...otherProps }) => {
+  const element = useRender({
+    defaultTagName: "h1",
+    render,
+    props: mergeProps<"h1">(
+      {
+        className:
+          "text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight scroll-m-20 text-pretty",
+      },
+      otherProps,
+    ),
+  });
+
+  return element;
+};
+
 export interface H1Props extends useRender.ComponentProps<"h1"> {}
 
 export const H1: FC<H1Props> = ({ render, ...otherProps }) => {
@@ -11,7 +29,7 @@ export const H1: FC<H1Props> = ({ render, ...otherProps }) => {
     props: mergeProps<"h1">(
       {
         className:
-          "text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight scroll-m-20 text-pretty",
+          "text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight scroll-m-20 text-pretty",
       },
       otherProps,
     ),

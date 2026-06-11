@@ -46,8 +46,11 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       </head>
       <body>
         <WayfindingUI.Masthead />
-        {children}
-        <WayfindingUI.Footer />
+        <div className="lg:mr-14">
+          {children}
+          <WayfindingUI.Footer />
+        </div>
+
         <Scripts />
       </body>
     </html>
