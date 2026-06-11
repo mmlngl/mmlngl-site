@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { ThemeToggleSwitch } from "~shared/theme-toggle-switch";
 import { NavLink } from "./nav-link";
 
 export const Masthead: FC = () => {
@@ -10,6 +11,7 @@ export const Masthead: FC = () => {
       </nav>
       <div className="flex gap-6 items-center">
         <NavLink to="/connect">Connect</NavLink>
+        <ThemeToggleSwitch />
       </div>
     </div>
   );
