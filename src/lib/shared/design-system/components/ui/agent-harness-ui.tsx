@@ -1,6 +1,6 @@
 import type { FC, HTMLAttributes } from "react";
 import { cn } from "~shared/design-system/utils";
-import { Card, CardContent, CardFooter, CardHeader } from "./card";
+import { Card, CardContent, CardHeader } from "./card";
 
 export interface AgentHarnessUIProps extends HTMLAttributes<HTMLDivElement> {}
 

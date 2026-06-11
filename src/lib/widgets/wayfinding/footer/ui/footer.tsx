@@ -5,7 +5,7 @@ import { Copyright } from "./copyright";
 
 export const Footer: FC = () => {
   return (
-    <footer className="text-xs border-t">
+    <footer className="text-xs border-t border-foreground">
       <Content>
         <Copyright />
         <Link to="/posts">Posts</Link>

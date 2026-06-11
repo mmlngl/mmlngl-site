@@ -29,7 +29,7 @@ export const Header: FC<HeaderProps> = ({
   return (
     <div
       className={cn(
-        "p-8 md:p-20 border-b w-full justify-between items-baseline flex",
+        "p-8 md:p-20 border-b border-foreground w-full justify-between items-baseline flex",
         className,
       )}
       {...props}

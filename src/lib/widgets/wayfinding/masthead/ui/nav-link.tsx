@@ -9,8 +9,9 @@ export interface NavLinkProps {
 export const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   return (
     <Link
+      className="font-bold hover:border-b"
       activeProps={{
-        className: "underline",
+        className: "border-b border-foreground",
       }}
       to={to}
     >

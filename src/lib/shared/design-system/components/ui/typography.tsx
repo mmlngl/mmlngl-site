@@ -72,4 +72,5 @@ export const T = {
   H1,
   H2,
   Lead,
+  Headline,
 };
