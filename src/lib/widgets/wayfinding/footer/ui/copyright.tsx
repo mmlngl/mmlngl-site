@@ -13,7 +13,7 @@ export const Copyright: FC<ComponentPropsWithoutRef<"div">> = ({
       )}
       {...props}
     >
-      <p className="lg:-rotate-90 lg:whitespace-nowrap">
+      <p className="lg:-rotate-90 lg:whitespace-nowrap text-xs">
         Copyright © {new Date().getFullYear()} Michele Memoli. All rights
         reserved.
       </p>

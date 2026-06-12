@@ -24,6 +24,10 @@ function UIPage() {
       <Content>
         <div>
           <Button>Click Me</Button>
+
+          <div className="border-2 rounded-2xl p-4 mt-20 bg-muted">
+            <p className="text-muted-foreground">The quick brown fox</p>
+          </div>
         </div>
       </Content>
     </>

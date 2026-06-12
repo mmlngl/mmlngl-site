@@ -14,13 +14,13 @@ export const NavLink: FC<NavLinkProps> = ({ to, children }) => {
       render={
         <Link
           activeProps={{
-            className: "border-b pointer",
+            className: "pointer",
           }}
           to={to}
-        >
-          {children}
-        </Link>
+        />
       }
-    ></Button>
+    >
+      {children}
+    </Button>
   );
 };

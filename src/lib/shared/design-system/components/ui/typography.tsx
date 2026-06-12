@@ -60,7 +60,7 @@ export const Lead: FC<LeadProps> = ({ render, ...otherProps }) => {
     defaultTagName: "p",
     render,
     props: mergeProps<"p">(
-      { className: "text-2xl md:text-3xl leading-[1.3]" },
+      { className: "text-xl sm:text-2xl md:text-3xl leading-[1.3]" },
       otherProps,
     ),
   });

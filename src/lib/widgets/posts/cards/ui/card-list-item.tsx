@@ -23,12 +23,12 @@ export const CardListItem: FC<CardListItemProps> = ({
       {...props}
     >
       <div className="flex items-center min-w-0">
-        <span className="w-6 shrink-0 overflow-hidden group-hover:w-8 transition-all">
-          <span className="ml-0 group-hover:ml-2 inline-block scale-[70%] opacity-50 group-hover:scale-100 group-hover:opacity-100 transition-all text-primary text-2xl font-bold">
+        <span className="w-6 shrink-0 overflow-hidden group-hover:w-9 transition-all">
+          <span className="ml-0 group-hover:ml-2 inline-block scale-[70%] opacity-50 group-hover:scale-100 group-hover:opacity-100 transition-all text-primary text-3xl font-bold">
             ➭
           </span>
         </span>
-        <T.H2 className="group-hover:text-primary min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-2xl! md:text-4xl!">
+        <T.H2 className="group-hover:text-primary min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-4xl! md:text-5xl!">
           {post.title}
         </T.H2>
       </div>

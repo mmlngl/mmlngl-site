@@ -6,12 +6,13 @@ import { NavLink } from "./nav-link";
 export const Masthead: FC = () => {
   return (
     <div className="shadow border-b-3 py-4 px-[2.4rem] z-20 relative flex items-center justify-between bg-background">
-      <nav className="flex gap-5 items-center">
-        <Logomark className="h-4 text-foreground" />
+      <nav className="flex gap-4 items-center">
+        <Logomark className="h-4 text-foreground mr-5" />
         <NavLink to="/">Home</NavLink>
         <NavLink to="/posts">Posts</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
       </nav>
-      <div className="flex gap-5 items-center">
+      <div className="flex gap-4 items-center">
         <NavLink to="/connect">Connect</NavLink>
         <ThemeToggleSwitch />
       </div>

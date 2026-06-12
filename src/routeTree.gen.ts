@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UiRouteImport } from './routes/ui'
 import { Route as ConnectRouteImport } from './routes/connect'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as PostsIndexRouteImport } from './routes/posts/index'
+import { Route as ProjectsSlugRouteImport } from './routes/projects/$slug'
 import { Route as PostsSlugRouteImport } from './routes/posts/$slug'
 
 const UiRoute = UiRouteImport.update({
@@ -30,9 +32,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PostsIndexRoute = PostsIndexRouteImport.update({
   id: '/posts/',
   path: '/posts/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
+  id: '/projects/$slug',
+  path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PostsSlugRoute = PostsSlugRouteImport.update({
@@ -46,14 +58,18 @@ export interface FileRoutesByFullPath {
   '/connect': typeof ConnectRoute
   '/ui': typeof UiRoute
   '/posts/$slug': typeof PostsSlugRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/posts/': typeof PostsIndexRoute
+  '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/connect': typeof ConnectRoute
   '/ui': typeof UiRoute
   '/posts/$slug': typeof PostsSlugRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/posts': typeof PostsIndexRoute
+  '/projects': typeof ProjectsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,14 +77,38 @@ export interface FileRoutesById {
   '/connect': typeof ConnectRoute
   '/ui': typeof UiRoute
   '/posts/$slug': typeof PostsSlugRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/posts/': typeof PostsIndexRoute
+  '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/connect' | '/ui' | '/posts/$slug' | '/posts/'
+  fullPaths:
+    | '/'
+    | '/connect'
+    | '/ui'
+    | '/posts/$slug'
+    | '/projects/$slug'
+    | '/posts/'
+    | '/projects/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/connect' | '/ui' | '/posts/$slug' | '/posts'
-  id: '__root__' | '/' | '/connect' | '/ui' | '/posts/$slug' | '/posts/'
+  to:
+    | '/'
+    | '/connect'
+    | '/ui'
+    | '/posts/$slug'
+    | '/projects/$slug'
+    | '/posts'
+    | '/projects'
+  id:
+    | '__root__'
+    | '/'
+    | '/connect'
+    | '/ui'
+    | '/posts/$slug'
+    | '/projects/$slug'
+    | '/posts/'
+    | '/projects/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,7 +116,9 @@ export interface RootRouteChildren {
   ConnectRoute: typeof ConnectRoute
   UiRoute: typeof UiRoute
   PostsSlugRoute: typeof PostsSlugRoute
+  ProjectsSlugRoute: typeof ProjectsSlugRoute
   PostsIndexRoute: typeof PostsIndexRoute
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -102,11 +144,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/posts/': {
       id: '/posts/'
       path: '/posts'
       fullPath: '/posts/'
       preLoaderRoute: typeof PostsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/$slug': {
+      id: '/projects/$slug'
+      path: '/projects/$slug'
+      fullPath: '/projects/$slug'
+      preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/posts/$slug': {
@@ -124,7 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   ConnectRoute: ConnectRoute,
   UiRoute: UiRoute,
   PostsSlugRoute: PostsSlugRoute,
+  ProjectsSlugRoute: ProjectsSlugRoute,
   PostsIndexRoute: PostsIndexRoute,
+  ProjectsIndexRoute: ProjectsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

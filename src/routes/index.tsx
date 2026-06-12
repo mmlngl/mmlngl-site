@@ -26,9 +26,11 @@ function HomePage() {
         heading={
           <>
             Same
-            <br /> Problems.{" "}
+            <br /> Problems.{` `}
             <span className="text-right block mt-12">
-              Different perspectives.
+              Different
+              <br />
+              {` `} perspectives.
             </span>
           </>
         }

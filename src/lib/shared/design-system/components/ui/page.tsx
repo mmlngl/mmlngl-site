@@ -34,7 +34,7 @@ export const Header: FC<HeaderProps> = ({
       )}
       {...props}
     >
-      <div className="flex flex-col gap-6 md:gap-12">
+      <div className="flex flex-col gap-6 md:gap-12 w-full">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <div className="flex items-center gap-4 text-sm">
             <span className="text-muted-foreground/30">/</span>
@@ -46,7 +46,7 @@ export const Header: FC<HeaderProps> = ({
             ))}
           </div>
         )}
-        <T.H1 className="max-w-5xl" render={headingRender}>
+        <T.H1 className="max-w-6xl" render={headingRender}>
           {heading}
         </T.H1>
         {lead ? (
