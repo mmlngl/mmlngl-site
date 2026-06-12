@@ -33,7 +33,7 @@ export const CardList: FC<CardListProps> = ({
   return (
     <section className={cn("flex flex-col gap-6 mt-4", className)} {...props}>
       {heading ? (
-        <T.H2 className="text-accent" render={headingRender}>
+        <T.H2 className="text-primary" render={headingRender}>
           {heading}
         </T.H2>
       ) : null}
@@ -42,7 +42,7 @@ export const CardList: FC<CardListProps> = ({
           <CardListItem key={post.slug} post={post} />
         ))}
       </div>
-      {footer ? <div className="mt-4">{footer}</div> : null}
+      {footer ? <div className="mt-4 text-primary">{footer}</div> : null}
     </section>
   );
 };

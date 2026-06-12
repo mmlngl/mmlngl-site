@@ -39,26 +39,6 @@ function PostsIndex() {
           headingRender={<h1 className="font-sans font-bold text-xl" />}
           footer={<p>Stuff and things here</p>}
         />
-
-        <PostsUI.CardList
-          posts={posts}
-          heading="AI"
-          headingRender={<h1 className="font-sans font-bold text-xl" />}
-        />
-
-        <PostsUI.CardList
-          posts={posts}
-          heading="AI"
-          headingRender={<h1 className="font-sans font-bold text-xl" />}
-        />
-
-        <Markdown>
-          {`
-# About
-
-A collection of thoughts, experiments, technical notes, and lessons learned from building products and businesses.
-`}
-        </Markdown>
       </Content>
     </>
   );

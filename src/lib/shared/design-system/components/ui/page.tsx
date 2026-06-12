@@ -29,7 +29,7 @@ export const Header: FC<HeaderProps> = ({
   return (
     <div
       className={cn(
-        "p-8 md:p-20 border-b-2  w-full justify-between items-baseline flex",
+        "px-8 py-16 md:p-20 border-b-2 w-full justify-between items-baseline flex",
         className,
       )}
       {...props}
@@ -69,7 +69,7 @@ export const Content: FC<ComponentPropsWithoutRef<"div">> = ({
   ...props
 }) => {
   return (
-    <div className={cn("p-8 md:px-20 pb-20", className)} {...props}>
+    <div className={cn("px-8 py-12 md:px-20 pb-20", className)} {...props}>
       <div className="flex flex-col gap-8">{children}</div>
     </div>
   );

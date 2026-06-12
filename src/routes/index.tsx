@@ -37,8 +37,15 @@ function HomePage() {
         headingRender={
           <h1 className="text-7xl! sm:text-8xl! md:text-9xl! mb-8" />
         }
-        lead="Thoughts on Product, Software, AI, Design, and Entrepreneurship.
-        Collected while building things."
+        lead={
+          <>
+            Thoughts on AI, Product, Design,
+            <br />
+            Software &amp;&nbsp;Entrepreneurship.
+            <br />
+            Collected while building things.
+          </>
+        }
       />
       <Content>
         <Prose className="prose-2xl max-w-lg" render={<section />}>

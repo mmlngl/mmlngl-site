@@ -7,9 +7,15 @@ export const Footer: FC = () => {
   return (
     <footer className="text-xs border-t-2 ">
       <Content>
-        <Link to="/posts">Posts</Link>
-        <Link to="/connect">Connect</Link>
-        <Logomark className="h-5 text-foreground" />
+        <div className="grid grid-cols-2 gap-6">
+          <div className="flex flex-col gap-2">
+            <Link to="/posts">Posts</Link>
+            <Link to="/connect">Connect</Link>
+          </div>
+          <div className=" text-right">
+            <Logomark className="h-5 inline" />
+          </div>
+        </div>
       </Content>
     </footer>
   );

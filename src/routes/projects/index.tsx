@@ -27,10 +27,7 @@ function ProjectsIndex() {
   const { projects } = Route.useLoaderData();
   return (
     <>
-      <Header
-        heading="Projects"
-        lead="Thoughts on Product, Software, AI, Design, and Entrepreneurship. Collected while building things."
-      />
+      <Header heading="Projects" lead="Finished or otherwise." />
       <Content>
         <ProjectsUI.CardList
           projects={projects}
