@@ -3,6 +3,7 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/space-grotesk";
 @import "@fontsource/story-script";
+@import "@fontsource/pirata-one";
 
 @plugin "@tailwindcss/typography";
 
@@ -12,9 +13,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --palette-red: oklch(0.654806 0.231688 29.178405);
+  --palette-red-darkest: oklch(0.2015 0.037 31.24);
   --font-heading: var(--font-sans);
   --font-sans: "Space Grotesk Variable", sans-serif;
-  --font-cursive: "Story Script", cursive;
+  --font-cursive: "Pirata One", cursive;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -58,7 +61,7 @@
 :root {
   --background: oklch(1 0 0);
   /*--foreground: oklch(0.145 0 0);*/
-  --foreground: oklch(0.6603 0.2343 29.12);
+  --foreground: var(--palette-red);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -72,7 +75,7 @@
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0 0 0);
+  --border: var(--palette-red);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.87 0 0);
@@ -92,9 +95,8 @@
 }
 
 .dark {
-  --background: oklch(0.2015 0.037 31.24);
-  /*--foreground: oklch(0.985 0 0);*/
-  --foreground: oklch(0.6603 0.2343 29.12);
+  --background: var(--palette-red-darkest);
+  --foreground: var(--palette-red);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -131,13 +133,13 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans bg-foreground/20;
   }
   hr {
-    @apply border-foreground;
+    @apply border-border;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {

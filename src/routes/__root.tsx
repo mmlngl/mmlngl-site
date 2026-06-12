@@ -1,15 +1,11 @@
 // src/routes/__root.tsx
 // <reference types="vite/client" />
 
-import {
-  createRootRoute,
-  HeadContent,
-  Outlet,
-  Scripts,
-} from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "~lib/shared/theme-provider";
 import * as WayfindingUI from "~lib/widgets/wayfinding";
+import { Copyright } from "~lib/widgets/wayfinding/footer/ui/copyright";
 import stylesCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -22,29 +18,11 @@ export const Route = createRootRoute({
         name: "viewport",
         content: "width=device-width, initial-scale=1",
       },
-      {
-        title: "TanStack Start Starter",
-      },
     ],
     links: [{ rel: "stylesheet", href: stylesCss }],
   }),
-  component: RootComponent,
+  shellComponent: RootDocument,
 });
-
-function RootComponent() {
-  return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <RootDocument>
-        <Outlet />
-      </RootDocument>
-    </ThemeProvider>
-  );
-}
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
@@ -53,12 +31,21 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
-        <WayfindingUI.Masthead />
-        <div className="lg:mr-14">
-          {children}
-          <WayfindingUI.Footer />
+        <div className="rounded-2xl border-4 relative m-2 bg-background shadow-lg overflow-hidden">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Copyright />
+            <WayfindingUI.Masthead />
+            <div className="lg:mr-14">
+              {children}
+              <WayfindingUI.Footer />
+            </div>
+          </ThemeProvider>
         </div>
-
         <Scripts />
       </body>
     </html>

@@ -1,10 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { seo } from "~app/seo";
 import { Content, Header } from "~ui/page";
 import { Prose } from "~ui/prose";
 import { T } from "~ui/typography";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
+  head: () => ({
+    meta: [
+      ...seo({
+        description:
+          "Thoughts on product, software, AI, design, and entrepreneurship by Michele Memoli.",
+        keywords:
+          "mmlngl, Michele Memoli, product strategy, software engineering, AI, design, entrepreneurship",
+        url: "https://mmlngl.com/",
+      }),
+    ],
+  }),
 });
 
 function HomePage() {

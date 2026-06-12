@@ -32,7 +32,11 @@ export const CardList: FC<CardListProps> = ({
 
   return (
     <section className={cn("flex flex-col gap-6 mt-4", className)} {...props}>
-      {heading ? <T.H2 render={headingRender}>{heading}</T.H2> : null}
+      {heading ? (
+        <T.H2 className="text-accent" render={headingRender}>
+          {heading}
+        </T.H2>
+      ) : null}
       <div className="flex flex-col gap-6">
         {orderedPosts.map((post) => (
           <CardListItem key={post.slug} post={post} />

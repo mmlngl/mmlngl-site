@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { FC, ReactNode } from "react";
+import { Button } from "~lib/shared/design-system/components/ui/button";
 
 export interface NavLinkProps {
   to: string;
@@ -8,14 +9,18 @@ export interface NavLinkProps {
 
 export const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   return (
-    <Link
-      className="font-bold hover:border-b"
-      activeProps={{
-        className: "border-b border-foreground",
-      }}
-      to={to}
-    >
-      {children}
-    </Link>
+    <Button
+      variant="outline"
+      render={
+        <Link
+          activeProps={{
+            className: "border-b pointer",
+          }}
+          to={to}
+        >
+          {children}
+        </Link>
+      }
+    ></Button>
   );
 };

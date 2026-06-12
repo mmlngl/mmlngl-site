@@ -1,15 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import type { FC } from "react";
+import { Logomark } from "~ui/logomark";
 import { Content } from "~ui/page";
-import { Copyright } from "./copyright";
 
 export const Footer: FC = () => {
   return (
-    <footer className="text-xs border-t border-foreground">
+    <footer className="text-xs border-t-2 ">
       <Content>
-        <Copyright />
         <Link to="/posts">Posts</Link>
         <Link to="/connect">Connect</Link>
+        <Logomark className="h-5 text-foreground" />
       </Content>
     </footer>
   );

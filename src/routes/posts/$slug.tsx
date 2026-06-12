@@ -1,4 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
+import { seo } from "~app/seo";
 import { PostEntity } from "~lib/entities/post";
 import { loadPostForSlugFn } from "~lib/entities/post/server";
 import * as Post from "~lib/features/posts";
@@ -11,6 +12,18 @@ export const Route = createFileRoute("/posts/$slug")({
     if (!maybePost) throw notFound();
     return { post: maybePost };
   },
+  head: ({ loaderData }) => ({
+    meta: [
+      ...seo({
+        title: loaderData?.post.title,
+        description: loaderData?.post.description,
+        keywords: loaderData?.post.keywords.join(", "),
+        url: loaderData?.post.slug
+          ? `https://mmlngl.com/posts/${loaderData.post.slug}`
+          : "https://mmlngl.com/posts",
+      }),
+    ],
+  }),
 });
 
 function PostDetail() {
