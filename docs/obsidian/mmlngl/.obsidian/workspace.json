@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
+                "file": "Posts/Product & Entrepreneurship/Why I need engineers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Utility gets adoption. Remarkability gets distribution."
+              "title": "Why I need engineers"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
+                "file": "Posts/Product & Entrepreneurship/Why I need engineers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Utility gets adoption. Remarkability gets distribution."
+              "title": "Backlinks for Why I need engineers"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
+                "file": "Posts/Product & Entrepreneurship/Why I need engineers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Utility gets adoption. Remarkability gets distribution."
+              "title": "Outgoing links from Why I need engineers"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
+                "file": "Posts/Product & Entrepreneurship/Why I need engineers.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Utility gets adoption. Remarkability gets distribution."
+              "title": "Outline of Why I need engineers"
             }
           }
         ]
@@ -183,8 +183,12 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "5b6f382ad0ebc038",
+  "active": "cf536fa20717fb2e",
   "lastOpenFiles": [
+    "Posts/Product & Entrepreneurship/Hiring Team.md",
+    "Posts/Product & Entrepreneurship/Why I need engineers.md",
+    "Posts/Product & Entrepreneurship/Untitled",
+    "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
     "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution.",
     "Posts/AI/Big AI sells F1 cars for trips to Tesco/Big AI sells F1 cars for trips to Tesco.md",
     "Posts/AI/Big AI sells F1 cars for trips to Tesco/Big AI is selling horsepower to commuters.md",
@@ -195,10 +199,8 @@
     "Content Calendar/2026-06-12 Big AI is selling horse power.md",
     "Posts/AI/Diverging Interests.md",
     "Content Calendar/2026-06-10 Set Up.md",
-    "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
     "Purpose.md",
     "Content Calendar/Content Planning.canvas",
-    "Posts/Product & Entrepreneurship/Hiring Team.md",
     "Untitled.base",
     "Posts/Product & Entrepreneurship",
     "Posts/Untitled",
@@ -209,8 +211,6 @@
     "Process/Article Generation.md",
     "Posts/Product & Entrepreneurship/On Market Success.md",
     "Content Calendar",
-    "Process",
-    "Posts",
     "Welcome.md"
   ]
 }

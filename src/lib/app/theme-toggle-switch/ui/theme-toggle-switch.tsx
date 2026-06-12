@@ -1,6 +1,6 @@
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import type { FC } from "react";
-import { useTheme } from "~shared/theme-provider";
+import { useTheme } from "~app/theme-provider";
 import { Button } from "~ui/button";
 import {
   DropdownMenu,

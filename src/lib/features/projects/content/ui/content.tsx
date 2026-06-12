@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { usePost } from "~lib/entities/post";
+import { useProject } from "~lib/entities/project";
 import { cn } from "~shared/design-system/utils";
 import { AgentHarnessUI, type AgentHarnessUIProps } from "~ui/agent-harness-ui";
 import { Markdown, type MarkdownProps } from "~ui/markdown";
@@ -9,7 +9,7 @@ export const Content: FC<Omit<MarkdownProps, "children">> = ({
   extraComponents,
   ...props
 }) => {
-  const post = usePost();
+  const project = useProject();
 
   return (
     <Markdown
@@ -22,7 +22,7 @@ export const Content: FC<Omit<MarkdownProps, "children">> = ({
       }}
       {...props}
     >
-      {post.content}
+      {project.content}
     </Markdown>
   );
 };

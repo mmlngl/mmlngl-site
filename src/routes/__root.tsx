@@ -3,9 +3,9 @@
 
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { ThemeProvider } from "~lib/shared/theme-provider";
-import * as WayfindingUI from "~lib/widgets/wayfinding";
+import { ThemeProvider } from "~app/theme-provider";
 import { Copyright } from "~lib/widgets/wayfinding/footer/ui/copyright";
+import * as WayfindingUI from "~widgets/wayfinding";
 import stylesCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -31,7 +31,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
-        <div className="rounded-2xl border-4 relative m-2 bg-background shadow-lg overflow-hidden">
+        <div className="rounded-2xl border-4 relative m-2 bg-background overflow-hidden">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

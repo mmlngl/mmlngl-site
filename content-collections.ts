@@ -22,7 +22,9 @@ const projects = defineCollection({
   name: "projects",
   directory: "content/projects",
   include: "**/*.mdx",
-  schema: common.extend({}),
+  schema: common.extend({
+    oneLiner: z.string(),
+  }),
 });
 
 export default defineConfig({

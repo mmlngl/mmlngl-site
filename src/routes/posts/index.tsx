@@ -4,7 +4,6 @@ import { loadAllPostsFn } from "~lib/entities/post/server";
 import * as PostsUI from "~lib/widgets/posts";
 import { Markdown } from "~ui/markdown";
 import { Content, Header } from "~ui/page";
-import { T } from "~ui/typography";
 
 export const Route = createFileRoute("/posts/")({
   component: PostsIndex,

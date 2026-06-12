@@ -25,3 +25,8 @@ export const platforms: Platform[] = [
     url: new URL("https://medium.com/@mmlngl"),
   },
 ];
+
+export const site = {
+  NAME: "Same Problems. Different Perspectives.",
+  URL: "https://mmlngl.com/",
+};

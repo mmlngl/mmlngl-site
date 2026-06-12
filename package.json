@@ -20,6 +20,7 @@
     "@types/bun": "latest",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
+    "@types/rss": "^0.0.32",
     "@vitejs/plugin-react": "^6.0.2",
     "lefthook": "^2.1.9",
     "vite": "^8.0.16"
@@ -32,7 +33,6 @@
     "@effect/platform-bun": ">=4.0.0-beta.78 || >=4.0.0",
     "@effect/platform-node": ">=4.0.0-beta.78 || >=4.0.0",
     "@fontsource-variable/space-grotesk": "^5.2.10",
-    "@fontsource/pirata-one": "^5.2.8",
     "@fontsource/story-script": "^5.2.2",
     "@tabler/icons-react": "^3.44.0",
     "@tailwindcss/vite": "^4.3.0",
@@ -48,6 +48,7 @@
     "react-dom": "^19.2.7",
     "remark-breaks": "^4.0.0",
     "remark-smartypants": "^3.0.2",
+    "rss": "^1.2.2",
     "safe-mdx": "^1.11.1",
     "shadcn": "^4.10.0",
     "tailwind-merge": "^3.6.0",

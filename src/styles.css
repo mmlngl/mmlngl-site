@@ -3,7 +3,6 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/space-grotesk";
 @import "@fontsource/story-script";
-@import "@fontsource/pirata-one";
 
 @plugin "@tailwindcss/typography";
 
@@ -15,11 +14,11 @@
 @theme inline {
   --palette-white: oklch(1 0 0);
   --palette-black: oklch(0 0 0);
+  --palette-grey: oklch(0.9 0 0);
   --palette-red-lightest: oklch(0.9441 0.0271 29.18);
-  --palette-red: oklch(0.654806 0.231688 29.178405);
-  --palette-red-darkest: oklch(0.1765 0.0493 29.23);
+  --palette-red: oklch(0.6149 0.2317 29.18);
   --font-sans: "Space Grotesk Variable", sans-serif;
-  --font-cursive: "Pirata One", cursive;
+  --font-cursive: "Story Script", cursive;
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -59,17 +58,20 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  --text-5xl--line-height: 1.15;
 }
 
 :root {
+  --domain: var(--palette-white);
   --background: var(--palette-white);
-  --foreground: var(--palette-red-darkest);
+  --foreground: var(--palette-red);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: var(--palette-red);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary-foreground: var(--palette-white);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: var(--palette-red-lightest);
@@ -97,7 +99,8 @@
 }
 
 .dark {
-  --background: var(--palette-red-darkest);
+  --domain: var(--muted);
+  --background: var(--palette-black);
   --foreground: var(--palette-red);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -139,6 +142,7 @@
   }
   html {
     @apply font-sans;
+    background-color: var(--domain);
   }
   hr {
     @apply border-border;

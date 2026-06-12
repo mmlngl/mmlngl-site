@@ -1,24 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import type { FC } from "react";
-import { usePost } from "~lib/entities/post";
-import { formatDate } from "~lib/shared/design-system/utils";
+import { useProject } from "~lib/entities/project";
 import { Header } from "~ui/page";
 
 export const Banner: FC = () => {
-  const post = usePost();
+  const project = useProject();
   return (
     <Header
-      heading={
-        <>
-          <span className="text-foreground/40 text-[50%]">Dear Reader,</span>
-          <br /> {post.title}
-        </>
-      }
-      lead={formatDate(post.publishedOn)}
+      heading={project.title}
       leadRender={<p className="text-sm!" />}
       breadcrumbs={[
-        <Link to="/posts" key="posts" className="hover:underline">
-          Posts
+        <Link to="/projects" key="projects" className="hover:underline">
+          Projects
         </Link>,
       ]}
     />

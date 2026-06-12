@@ -1,9 +1,9 @@
-const DEFAULT_SITE_NAME = "mmlngl";
+import { site } from "~shared/constants";
+
 const DEFAULT_DESCRIPTION =
   "Thoughts on product, software, AI, design, and entrepreneurship.";
 const DEFAULT_KEYWORDS =
   "mmlngl, Michele Memoli, product, software, AI, design, entrepreneurship, writing";
-const DEFAULT_URL = "https://mmlngl.com/";
 const DEFAULT_TWITTER = "@mmlngl_";
 
 export const seo = ({
@@ -11,8 +11,8 @@ export const seo = ({
   description = DEFAULT_DESCRIPTION,
   keywords = DEFAULT_KEYWORDS,
   image,
-  url = DEFAULT_URL,
-  siteName = DEFAULT_SITE_NAME,
+  url = site.URL,
+  siteName = site.NAME,
   twitterSite = DEFAULT_TWITTER,
   twitterCreator = DEFAULT_TWITTER,
 }: {
