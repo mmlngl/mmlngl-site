@@ -1,8 +1,10 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { seo } from "~app/seo";
-import { PostEntity } from "~lib/entities/post";
+import { getFakeViews } from "~features/posts/hit-counter/server";
+import { PostEntity, type PostModel } from "~lib/entities/post";
 import { loadPostForSlugFn } from "~lib/entities/post/server";
-import * as Post from "~lib/features/posts";
+import { Content as PostContent } from "~lib/features/posts";
+import { Banner as PostBanner } from "~lib/widgets/posts/banner/ui/banner";
 import { Content } from "~ui/page";
 
 export const Route = createFileRoute("/posts/$slug")({
@@ -10,7 +12,16 @@ export const Route = createFileRoute("/posts/$slug")({
   loader: async ({ params: { slug } }) => {
     const maybePost = await loadPostForSlugFn({ data: { slug } });
     if (!maybePost) throw notFound();
-    return { post: maybePost };
+    const viewCount = getFakeViews({
+      launchDate: maybePost.publishedOn,
+    });
+
+    return {
+      post: {
+        ...maybePost,
+        viewCount,
+      } satisfies PostModel,
+    };
   },
   head: ({ loaderData }) => ({
     meta: [
@@ -30,9 +41,9 @@ function PostDetail() {
   const { post } = Route.useLoaderData();
   return (
     <PostEntity post={post}>
-      <Post.Banner />
+      <PostBanner />
       <Content>
-        <Post.Content />
+        <PostContent />
       </Content>
     </PostEntity>
   );

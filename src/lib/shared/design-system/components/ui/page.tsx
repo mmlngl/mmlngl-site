@@ -8,12 +8,13 @@ import { cn } from "~shared/design-system/utils";
 import { T } from "./typography";
 
 export interface HeaderProps extends ComponentPropsWithoutRef<"div"> {
+  actions?: ReactNode[];
+  breadcrumbs?: ReactNode[];
   heading: ReactNode;
   headingRender?: ReactElement;
   lead?: ReactNode;
   leadRender?: ReactElement;
-  actions?: ReactNode[];
-  breadcrumbs?: ReactNode[];
+  meta?: ReactNode;
 }
 
 export const Header: FC<HeaderProps> = ({
@@ -21,6 +22,7 @@ export const Header: FC<HeaderProps> = ({
   breadcrumbs,
   className,
   heading,
+  meta,
   headingRender,
   lead,
   leadRender,
@@ -54,6 +56,7 @@ export const Header: FC<HeaderProps> = ({
             {lead}
           </T.Lead>
         ) : null}
+        {meta ? <div>{meta}</div> : null}
       </div>
 
       {actions && actions.length > 0 && (

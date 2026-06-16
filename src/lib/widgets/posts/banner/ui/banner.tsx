@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { FC } from "react";
 import { usePost } from "~lib/entities/post";
+import { HitCounter } from "~lib/features/posts";
 import { formatDate } from "~lib/shared/design-system/utils";
 import { Header } from "~ui/page";
 
@@ -16,6 +17,7 @@ export const Banner: FC = () => {
       }
       lead={formatDate(post.publishedOn)}
       leadRender={<p className="text-sm!" />}
+      meta={<HitCounter />}
       breadcrumbs={[
         <Link to="/posts" key="posts" className="hover:underline">
           Posts
