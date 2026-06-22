@@ -1,15 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
+import type { Post } from "content-collections";
 import { seo } from "~app/seo";
 import { loadAllPostsFn } from "~lib/entities/post/server";
 import * as PostsUI from "~lib/widgets/posts";
-import { Markdown } from "~ui/markdown";
 import { Content, Header } from "~ui/page";
 
 export const Route = createFileRoute("/posts/")({
   component: PostsIndex,
-  loader: async () => ({
-    posts: await loadAllPostsFn(),
-  }),
+  loader: async () => {
+    const posts = await loadAllPostsFn();
+
+    const byCategoryPosts = posts.reduce<Record<Post["category"], Post[]>>(
+      (acc, post) => {
+        acc[post.category].push(post);
+        return acc;
+      },
+      {
+        ai: [],
+        product: [],
+      },
+    );
+
+    return { byCategoryPosts };
+  },
   head: () => ({
     meta: [
       ...seo({
@@ -25,7 +38,7 @@ export const Route = createFileRoute("/posts/")({
 });
 
 function PostsIndex() {
-  const { posts } = Route.useLoaderData();
+  const { byCategoryPosts } = Route.useLoaderData();
   return (
     <>
       <Header
@@ -34,10 +47,15 @@ function PostsIndex() {
       />
       <Content>
         <PostsUI.CardList
-          posts={posts}
+          posts={byCategoryPosts.ai}
           heading="AI"
           headingRender={<h1 className="font-sans font-bold text-xl" />}
-          footer={<p>Stuff and things here</p>}
+        />
+
+        <PostsUI.CardList
+          posts={byCategoryPosts.product}
+          heading="Product"
+          headingRender={<h1 className="font-sans font-bold text-xl" />}
         />
       </Content>
     </>

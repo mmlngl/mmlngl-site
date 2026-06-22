@@ -1,5 +1,5 @@
+import type { Post } from "content-collections";
 import type { FC, HTMLAttributes, ReactElement, ReactNode } from "react";
-import type * as Entity from "~lib/entities/post";
 import { cn } from "~lib/shared/design-system/utils";
 import { T } from "~ui/typography";
 import { CardListItem } from "./card-list-item";
@@ -8,8 +8,8 @@ export interface CardListProps extends HTMLAttributes<HTMLDivElement> {
   heading?: ReactNode;
   footer?: ReactNode;
   headingRender?: ReactElement;
-  posts: Entity.PostModel[];
-  filterWith?: Entity.PostModel["slug"][];
+  posts: Post[];
+  filterWith?: Post["slug"][];
 }
 
 export const CardList: FC<CardListProps> = ({

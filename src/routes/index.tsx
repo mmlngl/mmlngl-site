@@ -25,7 +25,7 @@ function HomePage() {
       <Header
         heading={
           <>
-            Same
+            Known
             <br /> Problems.{` `}
             <span className="text-right block mt-12">
               Different

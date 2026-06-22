@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
+import type { Post } from "content-collections";
 import type { FC, HTMLAttributes } from "react";
-import type * as Entity from "~lib/entities/post";
 import { cn } from "~lib/shared/design-system/utils";
 import { T } from "~ui/typography";
 
 export interface CardListItemProps extends HTMLAttributes<HTMLAnchorElement> {
-  post: Entity.PostModel;
+  post: Post;
 }
 
 export const CardListItem: FC<CardListItemProps> = ({
