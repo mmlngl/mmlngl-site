@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Product & Entrepreneurship/Design queues. Not funnels./Design queues. Not funnels..md",
+                "file": "Posts/Product & Entrepreneurship/Why I need engineers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Design queues. Not funnels."
+              "title": "Why I need engineers"
             }
           }
         ]
@@ -98,8 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 425.5,
-    "collapsed": true
+    "width": 425.5
   },
   "right": {
     "id": "bbf909bb90adca78",
@@ -207,15 +206,16 @@
   },
   "active": "cf536fa20717fb2e",
   "lastOpenFiles": [
+    "Posts/Product & Entrepreneurship/On Market Success.md",
+    "Posts/Product & Entrepreneurship/Hiring Team.md",
+    "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
+    "Posts/AI/Diverging Interests.md",
     "Posts/AI/AI as your Senior.md",
     "Posts/Product & Entrepreneurship/Design queues. Not funnels./Design queues. Not funnels..md",
-    "Posts/Product & Entrepreneurship/On Market Success.md",
     "Posts/Product & Entrepreneurship/Design queues. Not funnels./Untitled",
     "Untitled.md",
     "Posts/Product & Entrepreneurship/Design queues. Not funnels.",
     "Posts/Product & Entrepreneurship/Why I need engineers.md",
-    "Posts/Product & Entrepreneurship/Hiring Team.md",
-    "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution./Utility gets adoption. Remarkability gets distribution..md",
     "Posts/Product & Entrepreneurship/Utility gets adoption. Remarkability gets distribution.",
     "Posts/AI/Big AI sells F1 cars for trips to Tesco/Big AI sells F1 cars for trips to Tesco.md",
     "Posts/AI/Big AI sells F1 cars for trips to Tesco/Big AI is selling horsepower to commuters.md",
@@ -224,7 +224,6 @@
     "Posts/AI/Big AI is selling horsepower to commuters/Big AI is selling horsepower to commuters.md",
     "Posts/AI/Big AI is selling horsepower to commuters",
     "Content Calendar/2026-06-12 Big AI is selling horse power.md",
-    "Posts/AI/Diverging Interests.md",
     "Content Calendar/2026-06-10 Set Up.md",
     "Purpose.md",
     "Content Calendar/Content Planning.canvas",
