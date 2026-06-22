@@ -8,12 +8,12 @@ export const Banner: FC = () => {
   return (
     <Header
       heading={project.title}
-      leadRender={<p className="text-sm!" />}
       breadcrumbs={[
         <Link to="/projects" key="projects" className="hover:underline">
           Projects
         </Link>,
       ]}
+      lead={project.oneLiner}
     />
   );
 };
