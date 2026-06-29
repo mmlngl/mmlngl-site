@@ -8,10 +8,23 @@ export const Footer: FC = () => {
     <footer className="text-xs border-t-2 ">
       <Content>
         <div className="grid grid-cols-2 gap-6">
-          <div className="flex flex-col gap-2">
-            <Link to="/posts">Posts</Link>
-            <Link to="/connect">Connect</Link>
-          </div>
+          <ul className="flex flex-col gap-2">
+            <li>
+              <Link className="hover:underline" to="/posts">
+                Posts
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" to="/projects">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" to="/connect">
+                Connect
+              </Link>
+            </li>
+          </ul>
           <div className=" text-right">
             <Logomark className="h-5 inline" />
           </div>

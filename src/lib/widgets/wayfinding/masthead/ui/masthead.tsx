@@ -16,7 +16,7 @@ export const Masthead: FC = () => {
         <NavLink to="/projects">Projects</NavLink>
       </nav>
       <div className="flex gap-4 items-center">
-        <NavLink to="/connect">You &lt;&gt; me</NavLink>
+        <NavLink to="/connect">You x Me</NavLink>
         <ThemeToggleSwitch />
       </div>
     </div>

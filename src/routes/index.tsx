@@ -25,7 +25,7 @@ function HomePage() {
       <Header
         heading={
           <>
-            Known
+            Well-known
             <br /> Problems.{` `}
             <span className="text-right block mt-12">
               Different
@@ -43,7 +43,7 @@ function HomePage() {
             <br />
             Software &amp;&nbsp;Entrepreneurship.
             <br />
-            Collected while building things.
+            Collected while building.
           </>
         }
       />
@@ -52,9 +52,8 @@ function HomePage() {
           <T.H2>About Me</T.H2>
 
           <p>
-            Product leader, software engineer, and entrepreneur. Interested in
-            how software, AI, and good product thinking create leverage for
-            teams and businesses.
+            I get sh*t delivered. With my background in design, engineering with
+            entreprenupership, I focus on delivery.
           </p>
         </Prose>
 
@@ -63,8 +62,7 @@ function HomePage() {
 
           <p>
             Over 15 years across UX, product, and engineering. Previously worked
-            with organisations including Google, BBC, ITV, MTV, and Burberry.
-            Founder and CTO of HTCH.
+            with Google, BBC, ITV, MTV, and Burberry. Founder and CTO of HTCH.
           </p>
         </Prose>
 

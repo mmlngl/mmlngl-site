@@ -22,7 +22,7 @@ export const Route = createFileRoute("/connect")({
 function RouteComponent() {
   return (
     <>
-      <Header heading="Connect" lead="Pick your poison" />
+      <Header heading="Connect" lead="Pick your brain poison" />
       <Content>
         <SocialGrid />
       </Content>
