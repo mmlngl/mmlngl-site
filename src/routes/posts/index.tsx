@@ -18,6 +18,7 @@ export const Route = createFileRoute("/posts/")({
       {
         ai: [],
         product: [],
+        software: [],
       },
     );
 
@@ -55,6 +56,12 @@ function PostsIndex() {
         <PostsUI.CardList
           posts={byCategoryPosts.product}
           heading="Product"
+          headingRender={<h1 className="font-sans font-bold text-xl" />}
+        />
+
+        <PostsUI.CardList
+          posts={byCategoryPosts.software}
+          heading="Software"
           headingRender={<h1 className="font-sans font-bold text-xl" />}
         />
       </Content>

@@ -1,0 +1,92 @@
+---
+title: "Running Effect-TS in Cloudflare Workers Without the Pain"
+slug: running-effect-ts-in-cloudflare-workers-without-the-pain
+category: software
+description: |
+  Oversubscription is what happens when demand is filtered, paced, and matched to real capacity.
+keywords:
+  - cloudflare
+  - effectts
+  - webdev
+publishedOn: 2025-10-03
+---
+
+I've been hacking on a Cloudflare Workers app with Effect-TS and ran into the same problem over and over:
+
+👉 I want to run Effects inside React Router loaders/actions.
+👉 I need envs (Cloudflare bindings) to build my infra layer (KV, D1, etc).
+👉 But you only get env at request time… and Layers want to be provided up-front.
+
+It all started with a stream from @mikearnaldi combining effect in Remix
+where he creates this idea of a runtime.
+
+After a few modifications/modernisations for React Router v7, I ended up here:
+
+```ts
+export const makeInfraLive = (env: Env) =>
+  Layer.mergeAll(Db.layer(env), KV.layer(env));
+
+export const makeFetchRuntime = <R, E>(
+  makeLiveLayer: ({
+    env,
+    infra,
+  }: {
+    env: Env;
+    infra: ReturnType<typeof makeInfraLive>;
+  }) => Layer.Layer<R, E, never>,
+) => {
+  const wrapRuntime =
+    <A, E2, TArgs extends { context: AppLoadContext }>(
+      body: (args: TArgs) => Effect.Effect<A, E2, R>,
+    ) =>
+    async (args: TArgs): Promise<A> => {
+      const infra = makeInfraLive(args.context.cloudflare.env);
+      const live = makeLiveLayer({ env: args.context.cloudflare.env, infra });
+      const runtime = ManagedRuntime.make(live);
+
+      const program = body(args).pipe(Effect.provide(TracingLive));
+
+      return runtime.runPromise(
+        Effect.withConfigProvider(
+          program,
+          ConfigProvider.fromJson(args.context.cloudflare.env),
+        ),
+      );
+    };
+
+  return wrapRuntime;
+};
+```
+
+And here's how it feels to use it in a route:
+
+```ts
+const runtime = makeFetchRuntime(({ infra }) =>
+  Simulations.SimulationsApplicationLayer.pipe(Layer.provide(infra)),
+);
+
+export const action = runtime(
+  Effect.fnUntraced(function* ({
+    context: {
+      cloudflare: { env },
+    },
+  }) {
+    yield* Effect.annotateCurrentSpan({ "http.route": "/forecasts/new" });
+
+    return { message: env.VALUE_FROM_CLOUDFLARE };
+  }),
+);
+```
+
+## Why This Works
+
+**Request-scoped env:** we only build infra when Cloudflare gives us the env.
+**Simple composition:** each route just declares its Effect program.
+**Tracing baked in:** spans/annotations live at the runtime layer.
+**No runtime errors:** wiring is done once, Effects stay pure.
+**Takeaway:** Cloudflare gives you bindings at request time.
+Effect-TS wants Layers up-front.
+
+This little wrapper bridges the two.
+
+I’m using it right now in production-bound code, and it feels both pragmatic and beautiful.

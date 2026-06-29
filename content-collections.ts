@@ -15,7 +15,7 @@ const posts = defineCollection({
   include: "**/*.mdx",
   schema: common.extend({
     publishedOn: z.date({ coerce: true }),
-    category: z.enum(["ai", "product"]),
+    category: z.enum(["ai", "product", "software"]),
   }),
 });
 

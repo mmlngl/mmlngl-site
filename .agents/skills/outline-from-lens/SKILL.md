@@ -1,6 +1,7 @@
----
+w---
 name: outline-from-lens
 description: Converts a validated lens into a thought piece. Use after a lens has been discovered and evaluated. The goal is not to explain the lens, but to earn the right to install it in the reader's mind.
+
 ---
 
 # Write From Lens
