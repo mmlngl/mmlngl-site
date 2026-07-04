@@ -52,8 +52,9 @@ function HomePage() {
           <T.H2>About Me</T.H2>
 
           <p>
-            I get sh*t delivered. With my background in design, engineering with
-            entreprenupership, I focus on delivery.
+            I get products delivered. With my background in design, engineering
+            and entreprenupership, I'm equipped handle any obstacle that gets in
+            the way.
           </p>
         </Prose>
 
